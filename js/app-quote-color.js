@@ -6,6 +6,10 @@ const hexNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 //set and target color picker button
 const hexBtn = document.querySelector(".hexBtn");
 
+const hexNextBtn = document.querySelector(".hexNextBtn");
+
+const hexPreviousBtn = document.querySelector(".hexPreviousBtn");
+
 //set and target body background for styling
 const bodyBcg2 = document.querySelector("body");
 
@@ -14,6 +18,12 @@ const hex = document.querySelector(".hex");
 
 //click event listener to call getHex function
 hexBtn.addEventListener("click", getHex);
+
+//click event listener to call getHex function
+hexNextBtn.addEventListener("click", getHexNext);
+
+//click event listener to call getHex function
+hexPreviousBtn.addEventListener("click", getHexPrevious);
 
 //function to get hex color code
 function getHex() {
@@ -33,6 +43,19 @@ function getHex() {
 
   //input hex code in html hex class
   hex.innerHTML = hexCol;
+}
+
+
+//function to get hex color code
+function getHexPrevious() {
+   let hexPrevious = getHex();
+   hex.innerHTML = string(hexPrevious);   
+}
+
+
+function getHexNext() {
+    let hexNext = getHex();
+    hex.innerHTML = string(hexNext);   
 }
 
 //quote display code
@@ -331,4 +354,48 @@ function displayQuote() {
 
   //input quote in html quote id.
   quote.innerHTML = quotes[number].quote;
+}
+
+
+
+//set and target previous button
+const previousBtn = document.querySelector("#previousBtn");
+
+//set and target next button
+const nextBtn = document.querySelector("#nextBtn");
+
+//click event listener to call previous function
+previousBtn.addEventListener("click", previous);
+
+//click event listener to call next function
+nextBtn.addEventListener("click", next);
+
+
+
+
+let currentIndex= 0;
+
+function previous () {
+    if (currentIndex > 0) {
+        currentIndex--;
+        quoteAuthor.innerHTML = quotes[currentIndex].name;
+        quote.innerHTML = quotes[currentIndex].quote;
+    }else{
+        currentIndex = quotes.length - 1;
+        quoteAuthor.innerHTML = quotes[currentIndex].name;
+        quote.innerHTML = quotes[currentIndex].quote;
+    }
+}
+
+
+function next () {
+    if (currentIndex < quotes.length - 1) {
+        currentIndex++;
+        quoteAuthor.innerHTML = quotes[currentIndex].name;
+        quote.innerHTML = quotes[currentIndex].quote;
+    }else{
+        currentIndex = 0;
+        quoteAuthor.innerHTML = quotes[currentIndex].name;
+        quote.innerHTML = quotes[currentIndex].quote;
+    }
 }

@@ -139,6 +139,36 @@ footer {
   outline: none;
 }
 
+
+
+#nextBtn {
+  border: none;
+  color: #8bbc4e;
+  background: #fff;
+  font-size: 1.3rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 3px solid #8bbc4e;
+  outline: none;
+}
+
+
+
+#previousBtn {
+  border: none;
+  color: #8bbc4e;
+  background: #fff;
+  font-size: 1.3rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 3px solid #8bbc4e;
+  outline: none;
+}
+
+
+
 #quoteHead{
   font-size: 1.3rem;
 }
@@ -188,6 +218,14 @@ blockquote {
     font-size: 1rem;
   }
 
+  #nextBtn {
+    font-size: 0.7rem;
+  }
+
+  #previousBtn {
+    font-size: 0.7rem;
+  }
+
   #quote{
     font-size: 1rem;
   }
@@ -199,6 +237,7 @@ blockquote {
   header #branding h1 {
     margin: 0px;
     float: none;
+    font-size: 1rem;
   }
 
   .hexColor {

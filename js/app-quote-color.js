@@ -43,6 +43,38 @@ function getHex() {
 
   //input hex code in html hex class
   hex.innerHTML = hexCol;
+
+    
+function hexToRgb (hexRgb) {
+
+
+    //Remove the '#' symbol if it exist
+    hexRgb = hexRgb.replace('#', '');
+
+    //Convert the hex value to decimal
+    var decimal = parseInt(hexRgb, 16);
+
+    //Exract the red, green and blue components from the decimal value
+    var red = (decimal >> 16) & 255;
+    var green = (decimal >> 8) & 255;
+    var blue = decimal & 255;
+
+    //Return rgb value as an object
+    var rgbData = {
+        r: red,
+        g: green,
+        b: blue
+    };   
+
+
+    var hexValue = "rgb(" + rgbData.r +", "+ rgbData.g + ", " + rgbData.b +")";
+    hexRgbData.innerHTML = hexValue;
+}
+
+
+hexToRgb(hexCol);
+
+
 }
 
 
@@ -57,6 +89,15 @@ function getHexNext() {
     let hexNext = getHex();
     hex.innerHTML = string(hexNext);   
 }
+
+
+var hexRgbData = document.querySelector(".rgb");
+var hexRgbBtn = document.querySelector(".hexRgbBtn");
+hexRgbBtn.addEventListener("click", getHex);
+
+
+
+
 
 //quote display code
 

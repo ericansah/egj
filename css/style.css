@@ -82,15 +82,31 @@ footer {
 
 /* hex background color change */
 .hexColor {
-  text-transform: capitalize;
   background-color: #ffffff;
   width: 50%;
   margin: auto;
   border-radius: 5px;
 }
 
+
+.rgbColor {
+  background-color: #ffffff;
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+
+
+
+
 .hex {
   font-size: 3rem;
+}
+
+.rgb {
+  font-size: 2rem;
 }
 
 .hexBtn {

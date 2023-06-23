@@ -6,8 +6,10 @@ const hexNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 //set and target color picker button
 const hexBtn = document.querySelector(".hexBtn");
 
+//set and target next button
 const hexNextBtn = document.querySelector(".hexNextBtn");
 
+//set and target previous button
 const hexPreviousBtn = document.querySelector(".hexPreviousBtn");
 
 //set and target body background for styling
@@ -44,7 +46,7 @@ function getHex() {
   //input hex code in html hex class
   hex.innerHTML = hexCol;
 
-    
+ //Hex to Rgb function   
 function hexToRgb (hexRgb) {
 
 
@@ -59,40 +61,46 @@ function hexToRgb (hexRgb) {
     var green = (decimal >> 8) & 255;
     var blue = decimal & 255;
 
-    //Return rgb value as an object
+    //Create rgb value object
     var rgbData = {
         r: red,
         g: green,
         b: blue
     };   
 
-
+    //Get rgbData object property values
     var hexValue = "rgb(" + rgbData.r +", "+ rgbData.g + ", " + rgbData.b +")";
+
+    //input rgb code in html hexRgbdata class
     hexRgbData.innerHTML = hexValue;
 }
 
-
+//Call hexToRgb function and parse hexCol value as parameter arguement.
 hexToRgb(hexCol);
 
 
 }
 
 
-//function to get hex color code
+//function to get previous data display
 function getHexPrevious() {
    let hexPrevious = getHex();
    hex.innerHTML = string(hexPrevious);   
 }
 
-
+//function to display next data
 function getHexNext() {
     let hexNext = getHex();
     hex.innerHTML = string(hexNext);   
 }
 
-
+//Set and target rgb class rgb class
 var hexRgbData = document.querySelector(".rgb");
+
+//set and hex Rgb button
 var hexRgbBtn = document.querySelector(".hexRgbBtn");
+
+//click event listner to call getHex and run hexToRgb function
 hexRgbBtn.addEventListener("click", getHex);
 
 
@@ -413,9 +421,11 @@ nextBtn.addEventListener("click", next);
 
 
 
+//set current index initial value to 0
+let currentIndex = 0;
 
-let currentIndex= 0;
 
+//previous function
 function previous () {
     if (currentIndex > 0) {
         currentIndex--;
@@ -429,6 +439,7 @@ function previous () {
 }
 
 
+//next function
 function next () {
     if (currentIndex < quotes.length - 1) {
         currentIndex++;
